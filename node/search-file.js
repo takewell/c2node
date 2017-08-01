@@ -14,6 +14,7 @@ rl.on('line', (lineString) => {
 });
 
 rl.on('close', () => {
+  console.log('都道府県名を入力してください。(ctrl+cで終了)');
   process.stdin.resume();
   process.stdin.setEncoding('utf-8');
   process.stdin.on('data', (data) => {
