@@ -7,7 +7,6 @@ const map = new Map();
 
 rl.on('line', (lineString) => {
   const columns = lineString.split('\t');
-  // console.log(columns);
   const pref = columns[0];
   const popu_density = columns[1];
   map.set(pref, popu_density);
@@ -16,8 +15,9 @@ rl.on('line', (lineString) => {
 rl.on('close', () => {
   console.log('都道府県名を入力してください。(ctrl+cで終了)');
   process.stdin.resume();
-  process.stdin.setEncoding('utf-8');
+  process.stdin.setEncoding('utf8');
   process.stdin.on('data', (data) => {
-    console.log(map.get(data));
+    let a = data.slice(0, data.length - 1);
+    console.log(map.get(a));
   });
 });
