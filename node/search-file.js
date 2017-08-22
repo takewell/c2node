@@ -18,6 +18,6 @@ rl.on('close', () => {
   process.stdin.setEncoding('utf8');
   process.stdin.on('data', (data) => {
     let a = data.slice(0, data.length - 1);
-    console.log(map.get(a));
+    console.log(a + "\t" + map.get(a));
   });
 });
